@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الوعي بالطوارئ بلغة الإشارة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <img src="logo.png" alt="شعار المشروع" class="brand-logo" />
+          <span class="site-name">الوعي بالطوارئ بلغة الإشارة</span>
+        </div>
+        <nav class="nav-links">
+          <a href="#cases">الحالات</a>
+          <a href="#video">الفيديو</a>
+          <a href="#contacts">التواصل</a>
+          <a href="#team">الفريق</a>
+        </nav>
+        <button class="nav-menu-toggle" id="navToggle" aria-label="فتح أو غلق القائمة">☰</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="landing-section" id="home">
+        <div class="landing-card fade-in">
+          <img src="logo.png" alt="شعار المشروع" class="landing-logo" />
+          <p class="landing-title">لأن إنقاذ حياة لا يحتاج صوت… بل يحتاج فهم.</p>
+          <button class="primary-btn" id="startBtn">ابدأ</button>
+        </div>
+      </section>
+
+      <section class="section-block fade-section" id="sign-language-guidelines">
+        <div class="section-header">
+          <span>🤟</span>
+          <h2>إرشادات لغة الإشارة</h2>
+          <p>جمل أساسية مفيدة للتواصل السريع في حالات الطوارئ.</p>
+        </div>
+        <div class="guidelines-panel">
+          <div class="guidelines-media">
+            <video controls playsinline class="guidelines-video">
+              <source src="ارشادات.mp4" type="video/mp4" />
+              متصفحك لا يدعم عرض الفيديو.
+            </video>
+          </div>
+          <div class="guidelines-copy">
+            <ul class="guidelines-list">
+              <li>ما اسمك؟</li>
+              <li>ما عمرك؟</li>
+              <li>أين تسكن؟</li>
+              <li>مساعدة</li>
+              <li>خطر</li>
+              <li>إسعاف</li>
+              <li>شرطة</li>
+              <li>ماس كهربائي</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="cases">
+        <div class="section-header">
+          <span>🚨</span>
+          <h2>الحالات الطارئة</h2>
+          <p>تعلم لغة الإشارة لكل حالة طارئة بسرعة وسهولة.</p>
+        </div>
+        <div class="card-grid">
+          <article class="case-card" data-case="الحروق" data-icon="🔥">
+            <div class="card-icon">🔥</div>
+            <h3>الحروق</h3>
+          </article>
+          <article class="case-card" data-case="الرعاف" data-icon="🩸">
+            <div class="card-icon">🩸</div>
+            <h3>الرعاف</h3>
+          </article>
+          <article class="case-card" data-case="الكسور" data-icon="🦴">
+            <div class="card-icon">🦴</div>
+            <h3>الكسور</h3>
+          </article>
+          <article class="case-card" data-case="الدوخة" data-icon="💫">
+            <div class="card-icon">💫</div>
+            <h3>الدوخة</h3>
+          </article>
+          <article class="case-card" data-case="الإنعاش القلبي" data-icon="❤️">
+            <div class="card-icon">❤️</div>
+            <h3>الإنعاش القلبي</h3>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block" id="video">
+        <div class="section-header">
+          <span>🎥</span>
+          <h2>تعليم خطوة بخطوة</h2>
+          <p>مشاهدة الفيديو والتدريب على الإجراء الصحيح.</p>
+        </div>
+        <div class="video-panel fade-in-onload">
+          <div class="video-frame" id="videoPlaceholder">
+            <div class="video-badge">فيديو إرشادي</div>
+            <video controls muted playsinline id="videoPlayer" class="video-player">
+              <source src="" type="video/mp4" />
+              متصفحك لا يدعم عرض الفيديو.
+            </video>
+          </div>
+          <div class="video-details">
+            <div class="video-meta">
+              <div>
+                <p class="video-label">حالة طارئة</p>
+                <h3 id="videoTitle">اختر حالة طارئة لعرض الإرشادات</h3>
+              </div>
+              <span class="video-tag">دليل سريع</span>
+            </div>
+            <p class="video-summary">شاهد الفيديو المخصص للحالة ثم اتبع الخطوات الواضحة والمبسطة بالأسفل.</p>
+            <ul class="steps-list" id="stepsList">
+              <li>اضغط على حالة الطوارئ في الأعلى لبدء الفيديو.</li>
+              <li>اتبع الإرشادات خطوة بخطوة.</li>
+              <li>تذكر لغة الإشارة لدعم الأشخاص ذوي الصمم.</li>
+            </ul>
+            <button class="secondary-btn" id="backBtn">عودة إلى الحالات</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="contacts">
+        <div class="section-header">
+          <span>📞</span>
+          <h2>أرقام الطوارئ</h2>
+          <p>احتفظ بهذه الأرقام في متناول يدك دائمًا.</p>
+        </div>
+        <div class="contacts-grid">
+          <article class="contact-card">
+            <div class="contact-icon">🚑</div>
+            <div>
+              <p class="contact-title">الطوارئ الموحدة</p>
+              <p class="contact-number">911</p>
+            </div>
+            <button class="call-btn">اتصال</button>
+          </article>
+          <article class="contact-card">
+            <div class="contact-icon">🧯</div>
+            <div>
+              <p class="contact-title">الدفاع المدني</p>
+              <p class="contact-number">998</p>
+            </div>
+            <button class="call-btn">اتصال</button>
+          </article>
+          <article class="contact-card">
+            <div class="contact-icon">🚑</div>
+            <div>
+              <p class="contact-title">الإسعاف</p>
+              <p class="contact-number">997</p>
+            </div>
+            <button class="call-btn">اتصال</button>
+          </article>
+          <article class="contact-card">
+            <div class="contact-icon">🚓</div>
+            <div>
+              <p class="contact-title">الشرطة</p>
+              <p class="contact-number">999</p>
+            </div>
+            <button class="call-btn">اتصال</button>
+          </article>
+          <article class="contact-card">
+            <div class="contact-icon">🚧</div>
+            <div>
+              <p class="contact-title">حوادث المرور</p>
+              <p class="contact-number">993</p>
+            </div>
+            <button class="call-btn">اتصال</button>
+          </article>
+          <article class="contact-card">
+            <div class="contact-icon">📡</div>
+            <div>
+              <p class="contact-title">طوارئ بدون شريحة</p>
+              <p class="contact-number">112</p>
+            </div>
+            <button class="call-btn">اتصال</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block team-block" id="team">
+        <div class="section-header">
+          <span>👩‍🎓</span>
+          <h2>إعداد الطالبات</h2>
+          <p>فريق العمل الذي صنع هذا المشروع.</p>
+        </div>
+        <div class="team-grid">
+          <div class="person-card">ريماس خالد</div>
+          <div class="person-card">ريم أحمد</div>
+          <div class="person-card">أروى أحمد</div>
+          <div class="person-card">جنى أيمن</div>
+          <div class="person-card">جنى عمرو</div>
+          <div class="person-card">بسملة مدحت</div>
+        </div>
+        <p class="supervisor">إشراف: أ / انتصار الزهراني</p>
+      </section>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
